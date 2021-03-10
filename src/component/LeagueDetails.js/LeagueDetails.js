@@ -8,22 +8,16 @@ const LeagueDetails = () => {
   const { idLeague } = useParams();
   const [league, setLeague] = useState([]);
   const {
-    strBanner,
     strBadge,
-
     strLeague,
     intFormedYear,
     strCountry,
     strSport,
     strGender,
-
     strDescriptionEN,
     strDescriptionDE,
-
-    strFacebook,
-    strTwitter,
-    strYoutube,
   } = league;
+  // strBanner, strFacebook,strTwitter,strYoutube,
   useEffect(() => {
     const url = `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${idLeague}`;
     fetch(url)
