@@ -29,33 +29,31 @@ const LeagueDetails = () => {
   let gender = strGender && strGender.toLowerCase();
   console.log(gender);
   return (
-    <div>
-      <div className="details ">
-        <div className="text-center py-3">
-          <img className="img-logo" src={strBadge} alt="..." />
-        </div>
-        <div className="container league-detail">
-          <div className="row">
-            <div className="col-md-9">
-              <h2>{strLeague}</h2>
-              <h6>Founded: {intFormedYear}</h6>
-              <h6>Country: {strCountry}</h6>
-              <h6>Sport Type: {strSport}</h6>
-              <h6>Gender: {strGender}</h6>
-            </div>
-            <div className="col-md-3">
-              {gender && gender === "male" ? (
-                <img className="img-details" src={male} alt="..." />
-              ) : (
-                <img className="img-details" src={female} alt="..." />
-              )}
-            </div>
+    <div className="details">
+      <div className="text-center py-3 banner">
+        <img className="img-logo" src={strBadge} alt="..." />
+      </div>
+      <div className="container league-detail">
+        <div className="row">
+          <div className="col-md-9">
+            <h2>{strLeague}</h2>
+            <h6>Founded: {intFormedYear}</h6>
+            <h6>Country: {strCountry}</h6>
+            <h6>Sport Type: {strSport}</h6>
+            <h6>Gender: {strGender}</h6>
+          </div>
+          <div className="col-md-3">
+            {gender && gender === "mixed" ? (
+              <img className="img-details" src={female} alt="..." />
+            ) : (
+              <img className="img-details" src={male} alt="..." />
+            )}
           </div>
         </div>
-        <div className="container my-5">
-          <p>{strDescriptionEN}</p>
-          <p>{strDescriptionDE}</p>
-        </div>
+      </div>
+      <div className="container my-5">
+        <p>{strDescriptionEN}</p>
+        <p>{strDescriptionDE}</p>
       </div>
     </div>
   );
