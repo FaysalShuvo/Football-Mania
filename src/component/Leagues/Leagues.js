@@ -10,13 +10,16 @@ const Leagues = () => {
       .then((res) => res.json())
       .then((data) => {
         const allLeagues = data.leagues;
-        const leagues50 = allLeagues.slice(0, 49);
-        setLeagues(leagues50);
+
+        setLeagues(allLeagues);
       });
   }, []);
 
   return (
     <div className="league">
+      <div className="home-banner text-center">
+        <h1>Football Mania</h1>
+      </div>
       <div className="container ">
         <div className="row">
           {leagues &&
