@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SingleLeague from "../SingleLeague/SingleLeague";
+import "./Leagues.css";
 
 const Leagues = () => {
   const [leagues, setLeagues] = useState([]);
@@ -9,19 +10,21 @@ const Leagues = () => {
       .then((res) => res.json())
       .then((data) => {
         const allLeagues = data.leagues;
-        const leagues30 = allLeagues.slice(0, 30);
-        setLeagues(leagues30);
+        const leagues50 = allLeagues.slice(0, 49);
+        setLeagues(leagues50);
       });
   }, []);
 
   return (
-    <div className="container ">
-      <div className="row">
-        {leagues &&
-          leagues.map((league) => (
-            <SingleLeague league={league} key={league.idLeague} />
-          ))}
-        <SingleLeague />
+    <div className="league">
+      <div className="container ">
+        <div className="row">
+          {leagues &&
+            leagues.map((league) => (
+              <SingleLeague league={league} key={league.idLeague} />
+            ))}
+          <SingleLeague />
+        </div>
       </div>
     </div>
   );
